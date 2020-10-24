@@ -7,15 +7,23 @@
 
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="579895272591-s64taag2q5tam4hc41dshqrbahipn7pa.apps.googleusercontent.com">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     
 
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+
+   
   </head>
   <body>
 
     <script>
+      $(document).ready(function(){
+      $("#hide").hide();
+      });
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -25,7 +33,7 @@
         console.log('Given Name: ' + profile.getGivenName());
 
         document.getElementById("name").innerHTML = profile.getGivenName(); 
-        
+
         console.log('Family Name: ' + profile.getFamilyName());
         console.log("Image URL: " + profile.getImageUrl());
         console.log("Email: " + profile.getEmail());
@@ -33,11 +41,16 @@
         // The ID token you need to pass to your backend:
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
+        $(document).ready(function(){
+        $("#hide").show();
+        });
       }
       function signOut() {
   gapi.auth2.getAuthInstance().signOut().then(function() {
     console.log('user signed out'); 
-    document.getElementById("name").innerHTML = null; 
+    document.getElementById("name").innerHTML = null; $(document).ready(function(){
+    $("#hide").hide();
+    });
   })
 }
     </script>
@@ -51,10 +64,11 @@
   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
   <button onclick="signOut()">Sign out</button>
 </div>
-<div class="container">
+<div class="container" id = "show">
   <img src="https://media2.vault.com/14338518/hands-in.jpg" style="width:100%;">
   <div class="centered" style = "font-size: 340%" >Hello <p id = "name" ></p></div> 
 </div>
+<div id = "hide"><h1 style = "font_size: 300px">HIDE THIS NEOW</h></div>
     <script src="script.js"></script>
   </body>
 </html>
