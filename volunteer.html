@@ -1,1 +1,20 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Volunteer</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApF3q73bbxX38PGCWrVTmdUlVb4JiovkY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="volunteer.css" />
+    <script src="volunteer.js"></script>
+  </head>
+  <body>
+      <h1>Volunteer near you</h1>
+      <label>Enter your city: 
+      <input type="text" id="loc"></input>
+    </label>
+    <input type="submit" value="Submit" onclick="findlocation()">
+    <div id="map"></div>
+  </body>
+</html>
