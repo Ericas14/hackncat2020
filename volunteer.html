@@ -1,1 +1,37 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Volunteer</title>
+    <div class="header">
+      <h2><img class ="headImg" src="Asset 1.png" alt="Volunteer U" ></h2>
+  </div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApF3q73bbxX38PGCWrVTmdUlVb4JiovkY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="volunteer.js"></script>
+    <div class="navbar">
+        <a  href="index.html" >Home</a> 
+        <a  class="active" href="volunteer.html">Volunteer</a> 
+        <a  href="volunteer at home.html">Help @ Home</a> 
+        <a  href="login.html">Login</a>
+      </div>
+  </head>
+  <body>
+    <img class ="volNearU" src="Asset 9@4x.png" alt="Volunteer U" >
+      <label>Enter your university: 
+      <input type="text" id="address"></input>
+    </label>
+    <input type="submit" value="Submit" id="submit" onclick="addEventCards()">
+    <div id="map"></div>
+    <div id="card-container"></div>
+    <hr>
+<div class = "contact info">
+  <img class ="ci" src="contact.png" alt="Contact info" >
+  <p style="padding-left: 60px;">Email: <a href="mailto:contactus@volunteeru.com">contactus@volunteeru.com</a></p>
+<p style="padding-left: 60px;">Phone#: (505) 555-5555</p>
+<p style="padding-left: 60px;">Location: 1601 E Market St, Greensboro, NC 27401</p>
+</div>
+  </body>
+</html>
