@@ -121,3 +121,36 @@ img.CenterImg {
     text-align: left;
   }
 }
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map {
+        height: 100%;
+        width: 75%;
+        display: block;
+        margin: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .nearyou{
+          text-align: center;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 75%;
+        margin: 0;
+        padding: 0;
+      }
+
+      label{
+          padding:25px;
+      }
+      .input{
+        border: 2px solid red;
+        border-radius: 4px;
+
+      }
