@@ -1,21 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<head>
+  <!-- <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="579895272591-s64taag2q5tam4hc41dshqrbahipn7pa.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
+  <script>
+  var googleUser = {};
+  var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id: '579895272591-s64taag2q5tam4hc41dshqrbahipn7pa.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      attachSignin(document.getElementById('customBtn'));
+    });
+  };
+
+  function attachSignin(element) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+          document.getElementById('name').innerText = "Hello " + 
+              googleUser.getBasicProfile().getName();
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+  </script>
+  <style type="text/css">
+    #customBtn {
+      display: inline-block;
+      background: rgb(43, 41, 41);
+      color: white;
+      width: 100%;
+      /* height: 45px;  */
+      text-align: center;
+      white-space: nowrap;
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }
+    span.label {
+      font-family: serif;
+      font-weight: normal;
+    }
+    span.icon {
+      background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+    }
+    span.buttonText {
+      display: inline-block;
+      /* vertical-align: middle; */
+      /* padding-top: 10px; */
+      padding-left: 42px;
+      padding-right: 42px;
+      font-size: 17px;
+      /* Use the Roboto font that is loaded in the <head> */
+      /* font-family: 'Roboto', sans-serif; */
+    }
+  </style>
+</head>
 
 
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="579895272591-s64taag2q5tam4hc41dshqrbahipn7pa.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    
 
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-
-    <script>
+<body>
+ <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -43,18 +104,52 @@
     </script>
 
 
-    <div class="topnav">
-  <a href="index.html">Home</a>
-  <a href="news.html">News</a>
-  <a href="test.html">Contact</a>
-  <a href="#about">About</a>
-  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-  <button onclick="signOut()">Sign out</button>
+    
+<div class="header">
+    <h2><img class ="headImg" src="Asset 1.png" alt="Volunteer U" ></h2>
 </div>
-<div class="container">
-  <img src="https://media2.vault.com/14338518/hands-in.jpg" style="width:100%;">
-  <div class="centered" style = "font-size: 340%" >Hello <p id = "name" ></p></div> 
+<div style = "font-size: 150%" ><p id = "name" ></p></div> 
+<div class="navbar">
+  <a class="active" href="index.html" >Home</a> 
+  <a  href="volunteer.html">Volunteer</a> 
+  <a  href="volunteer at home.html">Help @ Home</a> 
+
+
+<a href = "#"><div id="gSignInWrapper">
+    <div id="customBtn" class="customGPlusSignIn">
+      <span class="buttonText">Sign In</span>
+    </div>
+  </div>
+  <script>startApp();</script>
+  </a>
+
+    <a href = "#"><button class = "buttons" onclick="signOut()">Sign out</button></a>
 </div>
-    <script src="script.js"></script>
-  </body>
-</html>
+</div>
+<hr> 
+<div class= "homeCenter">
+  <img class ="aboutUs" src="about us.png" alt="About Us" >
+  <img class ="CenterImg" src="Home.png" alt="Volunteers working" >
+</div>
+
+<hr>
+
+<div class = "FindOps">
+<h2>Find Volunteering Opportunities Around U!</h2>
+<a  class = "VolButton" href="volunteer.html">Volunteer Now!!!</a> 
+</div>
+
+<hr>
+
+
+<div class = "FAQs">
+  <img class ="faqs" src="FAQs.png" alt="Frequently Asked Questions" >
+  <p style="padding-left: 60px;"><strong>Q: Is it possible to stay home and help?</strong></p>
+  <p style="padding-left: 60px;"><span style="font-weight: 400;">A: Absolutely! Just go to the tab labelled &ldquo;Help @ Home&rdquo; or </span><span style="font-weight: 400;"><span style="background-color: #000000; color: #ffffff;"><a style="background-color: #000000; color: #ffffff;" href="help@home.html">click here</a></span>.</span></p>
+  <p>&nbsp;</p>
+</div>
+
+
+
+</body>
+</html> 
