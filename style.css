@@ -45,6 +45,10 @@ hr {width: auto;margin-left: auto;margin-right: auto; margin-top: 30px; height: 
   background-color: rgb(43, 41, 41);
 
 }
+.buttonText{
+
+  background-color: rgb(43, 41, 41);
+}
 
 img.headImg {
   height: 35%;
@@ -123,7 +127,7 @@ img.ci{
   color: white;
   text-decoration: none;
   font-size: 17px;
-  width: 22%; /* Four links of equal widths */
+  width: 17%; /* Four links of equal widths */
   text-align: center;
   background-color: rgb(43, 41, 41);
 

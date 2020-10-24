@@ -2,7 +2,8 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="style.css" rel="stylesheet" type="text/css" />
-<body>
+
+<head>
   <!-- <meta name="google-signin-scope" content="profile email">
   <meta name="google-signin-client_id" content="579895272591-s64taag2q5tam4hc41dshqrbahipn7pa.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script> -->
@@ -70,9 +71,11 @@
       /* font-family: 'Roboto', sans-serif; */
     }
   </style>
+</head>
 
 
 
+<body>
  <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -99,17 +102,25 @@
   })
 }
     </script>
+
+
+    
 <div class="header">
     <h2><img class ="headImg" src="Asset 1.png" alt="Volunteer U" ></h2>
 </div>
-
+<div style = "font-size: 150%" ><p id = "name" ></p></div> 
 <div class="navbar">
   <a class="active" href="index.html" >Home</a> 
   <a  href="volunteer.html">Volunteer</a> 
   <a  href="volunteer at home.html">Help @ Home</a> 
-</div>
-<hr>
 
+
+<a href = "#" class="buttonText">Sign In</a>
+
+    <a href = "#" class = "navbar" onclick="signOut()">Sign out</a>
+</div>
+</div>
+<hr> 
 <div class= "homeCenter">
   <img class ="aboutUs" src="about us.png" alt="About Us" >
   <img class ="CenterImg" src="Home.png" alt="Volunteers working" >
@@ -131,7 +142,6 @@
   <p style="padding-left: 60px;"><span style="font-weight: 400;">A: Absolutely! Just go to the tab labelled &ldquo;Help @ Home&rdquo; or </span><span style="font-weight: 400;"><span style="background-color: #000000; color: #ffffff;"><a style="background-color: #000000; color: #ffffff;" href="help@home.html">click here</a></span>.</span></p>
   <p>&nbsp;</p>
 </div>
-<hr>
 <div class = "contact info">
   <img class ="ci" src="contact.png" alt="Contact info" >
   <p style="padding-left: 60px;">Email: <a href="mailto:contactus@volunteeru.com">contactus@volunteeru.com</a></p>
