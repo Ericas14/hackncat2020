@@ -41,15 +41,10 @@ function initMap() {
   function addNCATEventCards(){
     ncatobjects();
     const ncatevents = events;
+    deleteli();
     var factContainer = "";
     factContainer = document.getElementById('card-container');
-    for( i = 0; i<ncatevents.length;i++){
-        factContainer.appendChild(createListElement( ncatevents[i].name + "\n\n" +
-                                "Date: " + ncatevents[i].date + "\n\n" +
-                                "Description: " + ncatevents[i].description + "\n\n" +
-                                "Organization: " + ncatevents[i].organizaton + "\n\n" +
-                                "Tags: " + ncatevents[i].tags + "\n\n"));
-    }
+    addToPage(ncatevents,ncatevents.length);
     ncatMarkers();
   }
 
@@ -62,16 +57,22 @@ function initMap() {
   function addUNCGEventCards(){
     uncgobjects();
     const uncgevents = events;
+    deleteli();
     var factContainer = "";
     factContainer = document.getElementById('card-container');
-    for( i = 0; i<uncgevents.length;i++){
-        factContainer.appendChild(createListElement( uncgevents[i].name + "\n\n" +
-                                "Date: " + uncgevents[i].date + "\n\n" +
-                                "Description: " + uncgevents[i].description + "\n\n" +
-                                "Organization: " + uncgevents[i].organizaton + "\n\n" +
-                                "Tags: " + uncgevents[i].tags + "\n\n"));
-    }
+    addToPage(uncgevents,uncgevents.length);
     uncgMarkers();
+  }
+
+  function addToPage(events,length){
+    factContainer = document.getElementById('card-container');
+    for( i = 0; i<length;i++){
+        factContainer.appendChild(createListElement( events[i].name + "\n\n" +
+                                "Date: " + events[i].date + "\n\n" +
+                                "Description: " + events[i].description + "\n\n" +
+                                "Organization: " + events[i].organizaton + "\n\n" +
+                                "Tags: " + events[i].tags + "\n\n"));
+    }
   }
 
 function ncatobjects(){
@@ -228,4 +229,9 @@ function uncgMarkers(){
 
 function removePrevious(){
     events = [];
+}
+
+function deleteli(){
+    var myList = document.getElementById('card-container');
+    myList.innerHTML = '';
 }
