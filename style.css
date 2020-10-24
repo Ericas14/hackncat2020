@@ -22,7 +22,7 @@ hr {width: auto;margin-left: auto;margin-right: auto; margin-top: 30px; height: 
   margin: 5px auto;
   text-align: center;
   padding: 12px;
-  color: white;
+  color: #F29420;
   text-decoration: none;
   font-size: 17px;
   width: 25%; 
@@ -77,6 +77,31 @@ img.CenterImg {
   width: 75%;
   
 }
+img.ci{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10%;
+  width: 25%;
+
+}
+.volNearU{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10%;
+  width: 25%;
+}
+.volAtHome{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 25%;
+  width: 50;
+
+  
+        
+}
 
 
 
@@ -124,19 +149,21 @@ img.CenterImg {
 
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-       #map {
+       /*#map {
         height: 100%;
         width: 75%;
         display: block;
         margin: 20px;
         margin-left: auto;
         margin-right: auto;
+      }*/
+      #map {
+        height: 100%;
+        margin-top: 50px;
+        margin-left: 50px;
+        margin-right: 50px;
       }
 
-      .nearyou{
-          text-align: center;
-          font-family: Georgia, 'Times New Roman', Times, serif;
-      }
       
       /* Optional: Makes the sample page fill the window. */
       html,
@@ -148,9 +175,27 @@ img.CenterImg {
 
       label{
           padding:25px;
+          font-size: large;
+          font-family: Georgia, 'Times New Roman', Times, serif;
       }
-      .input{
-        border: 2px solid red;
-        border-radius: 4px;
 
+      #card-container{
+        padding:15px;
+        
       }
+
+      li{
+          border-style: solid;
+          border-width: 3px;
+          border-radius: 10px;
+          box-shadow: 0 8px 6px -6px black;
+          margin-bottom: 15px;
+          text-align: center;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-size: medium;
+          margin-left: 50px;
+          margin-right: 50px;
+          background-color: #e29639;
+      }
+
+      
